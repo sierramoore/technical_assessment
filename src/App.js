@@ -1,25 +1,15 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Entities } from './views/Entities';
+import { Assets } from './views/Assets';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <h1 style={{margin: '10px auto'}}>ExcelSense</h1>
+        <Route path="/" exact component={Assets} />
+        <Route path="/entities" exact component={Entities} />
+    </Router>
   );
 }
 
